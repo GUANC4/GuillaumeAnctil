@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="./App.js"></script>
+    <title>Tasks</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <input v-model="inputValue" placeholder="Enter task">
+    <button :disabled="inputValue === ''" @click="createTodo">Create</button>
+    <div v-for="todo in todos" :key="todo.id">
+        <input v-model="todo.name">
+        <button @click="updateTodo(todo)">Save</button>
+        <button @click="deleteTodo(todo)">Delete</button>
+    </div>
+</div>
+
+
+</body>
+
+</html>
